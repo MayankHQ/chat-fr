@@ -1,0 +1,152 @@
+.user-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.search-container {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) 2.5rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.users-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xs);
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.user-item:hover {
+  background-color: var(--gray-50);
+}
+
+.user-item.selected {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.user-avatar-container {
+  position: relative;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--success-color);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+.user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-username {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-item.selected .user-username {
+  color: var(--primary-light);
+}
+
+.user-status {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.status-online {
+  color: var(--success-color);
+}
+
+.status-offline {
+  color: var(--gray-400);
+}
+
+.user-item.selected .status-online,
+.user-item.selected .status-offline {
+  color: var(--white);
+}
+
+.no-users {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.no-users svg {
+  margin-bottom: var(--spacing-md);
+}
+
+.no-users p {
+  margin: 0;
+  font-size: var(--font-size-md);
+}

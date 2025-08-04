@@ -1,0 +1,137 @@
+.home-page {
+  height: 100vh;
+  background-color: var(--gray-50);
+}
+
+.chat-container {
+  display: flex;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.sidebar {
+  width: 350px;
+  background-color: var(--white);
+  border-right: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.user-status {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--success-color);
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--gray-600);
+  transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.main-chat {
+  flex: 1;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-500);
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.welcome-icon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.welcome-screen h2 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-xl);
+  color: var(--gray-700);
+}
+
+.welcome-screen p {
+  margin: 0;
+  font-size: var(--font-size-md);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .chat-container {
+    position: relative;
+  }
+  
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+    transform: translateX(0);
+  }
+  
+  .sidebar.hidden-mobile {
+    transform: translateX(-100%);
+  }
+  
+  .main-chat {
+    width: 100%;
+  }
+  
+  .main-chat.show-mobile {
+    width: 100%;
+  }
+}
